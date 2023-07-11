@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <style>
+      .container {
+        background-color: rgb(82, 82, 82);
+        border: 2px solid red;
+        display: flex;
+        height: 650px;
+      }
+      .box1 {
+        margin: 2px;
+        border: 2px solid black;
+        background-color: darkorange;
+        position: relative;
+        height: 100px;
+        width: 100px;
+        animation-name: rightMovement;
+        animation-duration: 5s;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;                 /* constant speed */     
+        /* animation-timing-function: ease;                     slow fast and slow */
+        /* animation-timing-function: ease-in; */
+        /* animation-timing-function: ease-in-out; */
+        animation-direction: alternate;
+        /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+
+      }
+
+
+      @keyframes rightMovement {
+        from {
+          top: 0;
+          left: 0;
+        }
+
+        to {
+          top: 0;
+          left: 1200px;
+        }
+      }
+
+
+      .box2{
+        margin: 2px;
+        border: 2px solid black;
+        background-color: darkorange;
+        position: relative;
+        height: 100px;
+        width: 100px;
+        animation-name: leftMovement;
+        animation: 5s linear 1s infinite alternate leftMovement; 
+      }
+
+      @keyframes leftMovement {
+        from {
+         top:540px;
+         left:1400px;
+        }
+
+        to {
+            top:540px;
+            left:0;
+        }
+      }
+
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1"></div>
+      <div class="box2"></div>
+    </div>
+  </body>
+</html>
